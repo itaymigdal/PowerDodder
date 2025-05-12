@@ -57,8 +57,8 @@ This will:
 
 ### 4. Helpers
 
-- DodderShow: Lists found candidates and already-infected files.
-- DodderClearCandidates: Empties the current candidates list (useful before rescanning).
+- `DodderShow`: Lists found candidates and already-infected files.
+- `DodderClearCandidates`: Empties the current candidates list (useful before rescanning).
 
 
 ## 📚 Name Origin
