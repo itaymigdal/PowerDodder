@@ -1,10 +1,10 @@
-# Dodder
+# PowerDodder
 
 **PowerDodder** is a post-exploitation persistence utility designed to stealthily embed execution commands into existing script files on the host. By leveraging files that are frequently accessed but rarely modified, it targets high-likelihood execution vectors with minimal detection risk.
 
 ## 🧠 Background
 
-Traditional persistence methods (e.g., Registry `Run` keys, scheduled tasks) are often monitored or flagged by EDRs and blue teams. **Dodder** takes a novel approach:
+Traditional persistence methods (e.g., Registry `Run` keys, scheduled tasks) are often monitored or flagged by EDRs and blue teams. PowerDodder takes a novel approach:
 
 - It hunts for existing script files on disk (`.ps1`, `.bat`,`.cmd`, `.vbs`, `.js`).
 - It prioritizes those that:
