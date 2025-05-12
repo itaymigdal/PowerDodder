@@ -24,7 +24,7 @@ iex (iwr https://raw.githubusercontent.com/itaymigdal/PowerDodder/refs/heads/mai
 
 ### 2. Run a Hunt
 
-Scans predefined folders (`C:\Users\`, `C:\Program Files\`, `C:\Program Files (x86)\`,`C:\ProgramData\`) for promising script files.
+Scans predefined folders (`C:\Users\`, `C:\Program Files\`, `C:\Program Files (x86)\`, `C:\ProgramData\`) for promising script files.
 ```
 DodderHunt
 ```
